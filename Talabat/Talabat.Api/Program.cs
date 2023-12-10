@@ -5,7 +5,7 @@ namespace Talabat.Api
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +22,26 @@ namespace Talabat.Api
             });
 
             var app = builder.Build();
+
+            using var scope = app.Services.CreateScope();
+            var services = scope.ServiceProvider;
+            var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+
+            try
+            {
+                var dbcontext = services.GetRequiredService<StoreContext>();
+                await dbcontext.Database.MigrateAsync();
+
+                await StoreContextSeed.SeedAsync(dbcontext);
+
+            }
+            catch (Exception ex)
+            {
+                var logger = loggerFactory.CreateLogger<Program>();
+                logger.LogError(ex, "Error during Migragtion");
+
+            }
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
