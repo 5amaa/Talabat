@@ -3,7 +3,6 @@ C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\n
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\Talabat.Api.AssemblyInfoInputs.cache
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\Talabat.Api.AssemblyInfo.cs
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\Talabat.Api.csproj.CoreCompileInputs.cache
-C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\Talabat.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\Talabat.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\appsettings.json

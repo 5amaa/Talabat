@@ -18,7 +18,7 @@ namespace Talabat.Repository.Data.Config
             builder.Property(p=>p.PictureUrl).IsRequired();
             builder.Property(p => p.Price).HasColumnType("decimal(18,2)");
 
-            builder.HasOne<ProductBrand>(p => p.ProductBrand).WithMany().HasForeignKey(p => p.productBrandId);
+            builder.HasOne<ProductBrand>(p => p.ProductBrand).WithMany().HasForeignKey(p => p.ProductBrandId);
             builder.HasOne<ProductType>(p => p.ProductType).WithMany().HasForeignKey(p => p.ProductTypeId);
 
         }
