@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Talabat"
+    "\\Talabat",
+    "\\Talabat\\Talabat.Api"
   ],
-  "SelectedNode": "\\Talabat",
   "PreviewInSolutionExplorer": false
 }
