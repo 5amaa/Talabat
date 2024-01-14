@@ -44,7 +44,7 @@ namespace Talabat.Repository.Repository
             return await ApplyQuerySpecification(spec).FirstOrDefaultAsync();
         }
 
-        //call Query
+        //call SpecificationEvalutor Ely bt3ml El Query
 
         public IQueryable<T> ApplyQuerySpecification(ISpecification<T> spec)
         {

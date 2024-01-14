@@ -69,3 +69,4 @@ C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\n
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\Talabat.Api.pdb
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\Talabat.Api.genruntimeconfig.cache
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\ref\Talabat.Api.dll
+C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\Talabat.Api.MvcApplicationPartsAssemblyInfo.cs
