@@ -15,5 +15,7 @@ namespace Talabat.Api.Dtos
 
         public int ProductTypeId { get; set; }
         public string ProductType { get; set; }
+
+        //install the package of the (AutoMapper.Extensions.Microsoft.DependencyInjec) w ha3ml el profile class ely create the mappnig  asmo (MappingProfiles)
     }
 }
