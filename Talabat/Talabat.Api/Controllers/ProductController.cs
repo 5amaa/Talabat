@@ -13,7 +13,7 @@ namespace Talabat.Api.Controllers
     public class ProductController : ApiControllerBase
     {
         public IGenaricRepository<Product> genaricRepository;
-        private readonly IMapper mapper;
+        private readonly IMapper mapper; //AutoMapper
 
         public ProductController(IGenaricRepository<Product> _genaricRepository , IMapper mapper)
         {

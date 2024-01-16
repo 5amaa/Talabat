@@ -65,6 +65,10 @@ namespace Talabat.Api
 
             app.UseHttpsRedirection();
 
+
+            //3shan ysha8al el wwwroot 
+            app.UseStaticFiles();
+
             app.UseAuthorization();
 
 

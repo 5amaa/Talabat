@@ -72,3 +72,4 @@ C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\n
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\net6.0\Talabat.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\Talabat.Api.staticwebassets.runtime.json
