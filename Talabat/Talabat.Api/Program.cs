@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Swagger;
+using Talabat.Api.Extensions;
 using Talabat.Api.Helpers;
 using Talabat.Core.Repository;
 using Talabat.Repository.Data;
@@ -10,25 +12,20 @@ namespace Talabat.Api
     {
         public static async Task Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
 
-            builder.Services.AddDbContext<StoreContext>(options =>
-            {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-            });
-            builder.Services.AddScoped(typeof(IGenaricRepository<>), typeof(GenaricRepository<>)); //inject IGenaricRepository
+            //SERVICES
 
+            builder.Services.AddSwaggerServices();
+            builder.Services.AddDBServices(builder.Configuration);
+            builder.Services.AddApplicationServices();
 
-            //inject the AutoMapper from the MappingProfiles class
-
-            builder.Services.AddAutoMapper(typeof(MappingProfiles));
+           
 
             var app = builder.Build();
 
@@ -59,8 +56,7 @@ namespace Talabat.Api
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                app.SwaggerMiddleWare();
             }
 
             app.UseHttpsRedirection();

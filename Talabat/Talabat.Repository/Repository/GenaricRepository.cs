@@ -31,7 +31,9 @@ namespace Talabat.Repository.Repository
 
         //Methods linq query dynamic using Specification Design pattern
         //1- ha7tage aro7 a3ml call llmethod bta3 el query 
+        
 
+    
 
 
         public async Task<IEnumerable<T>> GetAllWithSpecAsync(ISpecification<T> spec)

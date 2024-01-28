@@ -13,8 +13,14 @@ namespace Talabat.Core.Specifications
         public Expression<Func<T, bool>> Criteria { get ; set; }
         public List<Expression<Func<T, object>>> Includes { get ; set; } = new List<Expression<Func<T, object>>>(); // 3mlt el new hna 3shan all constrators initialize it 
 
+        //Sorting
+        //specification of the orderBy for sorting 
+        public Expression<Func<T, object>> OrderBy { get; set; }
 
-            //h3ml el constractor bta3 el initialies of the includes
+        public Expression<Func<T, object>> OrderByDesc { get; set; }
+
+
+        //h3ml el constractor bta3 el initialies of the includes
 
         public BaseSpecification() {
             
@@ -28,6 +34,20 @@ namespace Talabat.Core.Specifications
         }
 
         //kda h3ml el class ely byktem el sql query in repo w esmo SpecificationEvalutor
+
+        //Method for setting the order by and orderByDesc
+
+        public void AddOrderBy(Expression<Func<T, object>> ordderBy)
+        {
+            OrderBy = ordderBy;
+        }
+
+        public void AddOrderByDesc(Expression<Func<T, object>> orderbydesc)
+        {
+            OrderByDesc = orderbydesc;
+        }
+
+        //kda hro7 ll class ely byktem el sql query in repo w esmo SpecificationEvalutor
 
     }
 }

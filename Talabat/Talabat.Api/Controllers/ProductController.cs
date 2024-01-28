@@ -13,22 +13,34 @@ namespace Talabat.Api.Controllers
     public class ProductController : ApiControllerBase
     {
         public IGenaricRepository<Product> genaricRepository;
+        private readonly IGenaricRepository<ProductBrand> _brandRepo;
+        private readonly IGenaricRepository<ProductType> _typeRepo;
         private readonly IMapper mapper; //AutoMapper
 
-        public ProductController(IGenaricRepository<Product> _genaricRepository , IMapper mapper)
+        public ProductController(IGenaricRepository<Product> _genaricRepository ,
+            IGenaricRepository<ProductBrand> brandRepo,
+            IGenaricRepository<ProductType> typeRepo,
+            IMapper mapper)
         {
             genaricRepository = _genaricRepository;
+            _brandRepo = brandRepo;
+            _typeRepo = typeRepo;
             this.mapper = mapper;
         }
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetAll() {
 
-            var spec = new ProductWithBrandAndTypeSpecifications();
+
+        [HttpGet("products")]
+        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetAll(string? sort) {
+
+            var spec = new ProductWithBrandAndTypeSpecifications( sort);
             var products = await genaricRepository.GetAllWithSpecAsync(spec);
 
             //use the mapper to return IEnumerable<ProductToReturnDto> insted of the IEnumerable<Product> Class w ana 3mla inject in the ctor
             return Ok(mapper.Map< IEnumerable<Product>, IEnumerable<ProductToReturnDto>>(products));
         }
+
+
+
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductToReturnDto>> GetById( int id) {
 
@@ -38,13 +50,33 @@ namespace Talabat.Api.Controllers
             var product = await genaricRepository.GetByIdWithSpecAsync(spec);
             if (product == null) 
             {
-                return NotFound();
+                return NotFound("notfound");
             }
 
             //use the mapper to return ProductToReturnDto insted of the Product Class
             return Ok(mapper.Map<Product , ProductToReturnDto>(product));
         }
 
+
+
+         
+        [HttpGet("brands")]
+        public async Task<ActionResult<IEnumerable<ProductBrand>>> GetAllBrands()
+        {
+            IEnumerable<ProductBrand> brands = await _brandRepo.GetAllAsync();
+            return Ok(brands);
+
+        }
+
+        [HttpGet("types")]
+
+        public async Task<ActionResult<IEnumerable<ProductType>>> GetAllTypes()
+        {
+            IEnumerable<ProductType> types = await _typeRepo.GetAllAsync();
+            return Ok(types);
+        }
+
+     
 
     }
 }

@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Talabat",
-    "\\Talabat\\Talabat.Api"
+    "\\Talabat\\Talabat.Api",
+    "\\Talabat\\Talabat.Repository",
+    "\\Talabat\\Talabat.Repository\\Repository"
   ],
-  "SelectedNode": "\\Talabat\\Talabat.sln",
+  "SelectedNode": "\\Talabat\\Talabat.Repository\\Repository\\GenaricRepository.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -24,6 +24,21 @@ namespace Talabat.Repository.Repository
                 query = query.Where(spec.Criteria); //dbContext.Product.Where(p=> p.Id == 1);
             }
 
+
+            //dbContext.Product.OrderBy(p => p.price);
+            //or
+            //dbContext.Product.OrderBy(p => p.Name);
+            //name aw el price dah hyt7ded mn el ProductWithBrandAndTypeSpecifications fe el ctor bta3 getall
+            if (spec.OrderBy != null)
+                query = query.OrderBy(spec.OrderBy);
+
+
+            //dbContext.Product.OrderByDescending(p => p.price);
+            if (spec.OrderByDesc != null)
+                query= query.OrderByDescending(spec.OrderByDesc);
+
+
+
             //dbContext.Product.Where(p=> p.Id == 1).Include(p => p.productType).Include(p => p.productBrand);
 
             query = spec.Includes.Aggregate(query, (currentQuery, includeExpression) => currentQuery.Include(includeExpression));

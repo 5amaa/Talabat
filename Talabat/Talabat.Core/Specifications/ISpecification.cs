@@ -16,5 +16,17 @@ namespace Talabat.Core.Specifications
         //Signature of the prop and will implement it in class
         public Expression<Func<T, bool>> Criteria { get; set; }
         public List<Expression<Func<T, object>>>  Includes { get; set; }
+
+
+        //Sorting
+        //specification of the orderBy for sorting 
+        public Expression<Func<T , object>> OrderBy { get; set; }
+
+        public Expression<Func<T, object>> OrderByDesc { get; set; }
+
+      
+
+
+
     }
 }
