@@ -29,10 +29,10 @@ namespace Talabat.Api.Controllers
         }
 
 
-        [HttpGet("products")]
-        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetAll(string? sort) {
+        [HttpGet("GetAll")]
+        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetAll(string? sort , int? brandId , int? typeId) {
 
-            var spec = new ProductWithBrandAndTypeSpecifications( sort);
+            var spec = new ProductWithBrandAndTypeSpecifications( sort , brandId , typeId);
             var products = await genaricRepository.GetAllWithSpecAsync(spec);
 
             //use the mapper to return IEnumerable<ProductToReturnDto> insted of the IEnumerable<Product> Class w ana 3mla inject in the ctor

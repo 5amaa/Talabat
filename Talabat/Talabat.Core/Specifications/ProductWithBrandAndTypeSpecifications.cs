@@ -14,7 +14,10 @@ namespace Talabat.Core.Specifications
         //in the getAll method has the list empty so i need to add the brand and the type to the list of the includes 
 
         //constuctor for the getAll 
-        public ProductWithBrandAndTypeSpecifications(string? sort)
+        public ProductWithBrandAndTypeSpecifications(string? sort, int? brandId, int? typeId)
+            :base(p=> (!brandId.HasValue || p.ProductBrandId == brandId.Value)
+                       && (!typeId.HasValue || p.ProductTypeId == typeId.Value )
+                    ) 
         {
             Includes.Add(p => p.ProductBrand);
             Includes.Add(p => p.ProductType);
