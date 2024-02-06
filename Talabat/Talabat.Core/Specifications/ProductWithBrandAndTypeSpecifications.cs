@@ -41,6 +41,14 @@ namespace Talabat.Core.Specifications
                         break;
                 }
             }
+
+            //pagesize =5
+            //index =3
+            //skip=> 10 , take=> 5
+
+            ApplyPagination(specParams.PageSize * (specParams.PageIndex - 1), specParams.PageSize);
+
+
         }
 
         //constuctor for the getById takes the cretiria

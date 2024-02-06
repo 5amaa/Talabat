@@ -38,6 +38,13 @@ namespace Talabat.Repository.Repository
                 query= query.OrderByDescending(spec.OrderByDesc);
 
 
+            //pagination 
+            // b3d lma y3ml sot w orderby habtdy y3ml el pagination
+
+            if (spec.IsPagination )
+            {
+               query = query.Skip(spec.Skip).Take(spec.Take);
+            }
 
             //dbContext.Product.Where(p=> p.Id == 1).Include(p => p.productType).Include(p => p.productBrand);
 

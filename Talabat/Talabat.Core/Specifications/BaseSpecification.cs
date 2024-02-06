@@ -20,6 +20,12 @@ namespace Talabat.Core.Specifications
         public Expression<Func<T, object>> OrderByDesc { get; set; }
 
 
+        //Pagination
+        public int Skip { get; set; }
+        public int Take { get; set; }
+        public bool IsPagination { get; set; }
+
+
         //h3ml el constractor bta3 el initialies of the includes
 
         public BaseSpecification() {
@@ -48,6 +54,14 @@ namespace Talabat.Core.Specifications
         }
 
         //kda hro7 ll class ely byktem el sql query in repo w esmo SpecificationEvalutor
+
+
+        public void ApplyPagination(int skip , int take)
+        {
+            IsPagination = true;
+            Skip = skip;
+            Take = take;
+        }
 
     }
 }
