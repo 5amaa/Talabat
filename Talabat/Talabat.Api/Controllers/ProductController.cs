@@ -30,9 +30,11 @@ namespace Talabat.Api.Controllers
 
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetAll(string? sort , int? brandId , int? typeId) {
+        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetAll([FromQuery] ProductSpecParams Params) {
+            // clean code En el End Point mata5odsh 2akter mn 3 params fa shethom w 7atethom fe class 
+            //3shan hya get mlhash body fa 3rftha anha FromQuery 3shan lw m2oltsh kda hydram error an 415 
 
-            var spec = new ProductWithBrandAndTypeSpecifications( sort , brandId , typeId);
+            var spec = new ProductWithBrandAndTypeSpecifications(Params);
             var products = await genaricRepository.GetAllWithSpecAsync(spec);
 
             //use the mapper to return IEnumerable<ProductToReturnDto> insted of the IEnumerable<Product> Class w ana 3mla inject in the ctor

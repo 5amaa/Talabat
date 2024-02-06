@@ -22,7 +22,7 @@ namespace Talabat.Repository.Repository
             if (spec.Criteria != null)
             {
                 query = query.Where(spec.Criteria); //dbContext.Product.Where(p=> p.Id == 1);
-            }
+            } 
 
 
             //dbContext.Product.OrderBy(p => p.price);
