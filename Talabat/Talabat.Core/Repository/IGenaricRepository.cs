@@ -15,9 +15,10 @@ namespace Talabat.Core.Repository
 
         ///methods for linq query dynamic
         
-        Task<IEnumerable<T>> GetAllWithSpecAsync(ISpecification<T> spec);
+        Task<IReadOnlyList<T>> GetAllWithSpecAsync(ISpecification<T> spec);
 
         Task<T> GetByIdWithSpecAsync(ISpecification<T> spec);
+        Task<int> GetCountAsync(ISpecification<T> spec);
 
     }
 }

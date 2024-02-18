@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Talabat.Api.Dtos;
+using Talabat.Api.Helpers;
 using Talabat.Core.Entities;
 using Talabat.Core.Repository;
 using Talabat.Core.Specifications;
@@ -30,15 +31,17 @@ namespace Talabat.Api.Controllers
 
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetAll([FromQuery] ProductSpecParams Params) {
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetAll([FromQuery] ProductSpecParams Params) {
             // clean code En el End Point mata5odsh 2akter mn 3 params fa shethom w 7atethom fe class 
             //3shan hya get mlhash body fa 3rftha anha FromQuery 3shan lw m2oltsh kda hydram error an 415 
 
             var spec = new ProductWithBrandAndTypeSpecifications(Params);
             var products = await genaricRepository.GetAllWithSpecAsync(spec);
-
+           var data = mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
+            var countSpec = new ProductWithFilterationForCountSpecification(Params);
+            var count = await genaricRepository.GetCountAsync(countSpec);
             //use the mapper to return IEnumerable<ProductToReturnDto> insted of the IEnumerable<Product> Class w ana 3mla inject in the ctor
-            return Ok(mapper.Map< IEnumerable<Product>, IEnumerable<ProductToReturnDto>>(products));
+            return Ok(new Pagination<ProductToReturnDto>(Params.PageIndex , Params.PageSize , count , data));
         }
 
 

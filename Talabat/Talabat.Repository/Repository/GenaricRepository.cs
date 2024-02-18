@@ -36,7 +36,7 @@ namespace Talabat.Repository.Repository
     
 
 
-        public async Task<IEnumerable<T>> GetAllWithSpecAsync(ISpecification<T> spec)
+        public async Task<IReadOnlyList<T>> GetAllWithSpecAsync(ISpecification<T> spec)
         {
            return await  ApplyQuerySpecification(spec).ToListAsync();
         }
@@ -44,6 +44,10 @@ namespace Talabat.Repository.Repository
         public async Task<T> GetByIdWithSpecAsync(ISpecification<T> spec)
         {
             return await ApplyQuerySpecification(spec).FirstOrDefaultAsync();
+        }
+        public async Task<int> GetCountAsync(ISpecification<T> spec)
+        {
+            return await ApplyQuerySpecification(spec).CountAsync();
         }
 
         //call SpecificationEvalutor Ely bt3ml El Query
