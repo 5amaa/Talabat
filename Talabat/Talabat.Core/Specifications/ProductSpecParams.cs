@@ -15,7 +15,13 @@ namespace Talabat.Core.Specifications
             get { return pageSize; }
             set { pageSize = value> maxSize ? maxSize : value ; }
         }
-       
+        //search in critearia 
+        private string search;
+        public string? Search
+        {
+            set { search = value.ToLower(); }
+            get { return search; }
+        }
         public int PageIndex { get; set;} = 1;
 
         public string? Sort { get; set; }

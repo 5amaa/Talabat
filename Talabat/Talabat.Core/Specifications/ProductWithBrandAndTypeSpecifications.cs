@@ -16,8 +16,12 @@ namespace Talabat.Core.Specifications
         //constuctor for the getAll 
         public ProductWithBrandAndTypeSpecifications(ProductSpecParams specParams)
             /// Filtering       lw brandid mo4 feha value hyd5ol fl condition el tany dah (p.ProductBrandId == brandId.Value) y3ny hyd5ol feh lma ykon feh value 
-            : base(p=> (!specParams.BrandId.HasValue || p.ProductBrandId == specParams.BrandId.Value)
-                       && (!specParams.TypeId.HasValue || p.ProductTypeId == specParams.TypeId.Value )
+            : base(p=> 
+                        //search
+                        (string.IsNullOrEmpty(specParams.Search) || p.Name.ToLower().Contains(specParams.Search))&&
+            
+                        (!specParams.BrandId.HasValue || p.ProductBrandId == specParams.BrandId.Value) &&
+                        (!specParams.TypeId.HasValue || p.ProductTypeId == specParams.TypeId.Value )
                     ) 
         {
             Includes.Add(p => p.ProductBrand);
