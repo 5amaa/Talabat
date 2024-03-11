@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using Talabat.Repository.Data;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Talabat.Api.Extensions
 {
@@ -13,7 +15,17 @@ namespace Talabat.Api.Extensions
                 options.UseSqlServer(config.GetConnectionString("Default"));
 
             });
+            
+            
             return services;
         }
+        //public static IConnectionMultiplexer AddRedisServices(this IServiceCollection services, IConfiguration config)
+        //{
+            
+            
+            
+            
+        //}
+       
     }
 }

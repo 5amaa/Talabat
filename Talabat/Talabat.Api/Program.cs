@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Swagger;
 using Talabat.Api.Extensions;
 using Talabat.Api.Helpers;
@@ -24,8 +25,16 @@ namespace Talabat.Api
             builder.Services.AddSwaggerServices();
             builder.Services.AddDBServices(builder.Configuration);
             builder.Services.AddApplicationServices();
+            builder.Services.AddSingleton<IConnectionMultiplexer>(options =>
+            {
 
-           
+
+                var connection = builder.Configuration.GetConnectionString("Redis");
+
+                return ConnectionMultiplexer.Connect(connection);
+            });
+
+
 
             var app = builder.Build();
 

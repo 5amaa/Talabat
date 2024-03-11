@@ -9,3 +9,4 @@ C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Core\obj\Debug\
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Core\obj\Debug\net6.0\refint\Talabat.Core.dll
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Core\obj\Debug\net6.0\Talabat.Core.pdb
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Core\obj\Debug\net6.0\ref\Talabat.Core.dll
+C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Core\obj\Debug\net6.0\Talabat.Core.csproj.AssemblyReference.cache

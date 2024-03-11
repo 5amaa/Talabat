@@ -73,3 +73,5 @@ C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\obj\Debug\n
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\Talabat.Api.staticwebassets.runtime.json
+C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\Samaa.Ashraf\Documents\Projects\Talabat\Talabat\Talabat.Api\bin\Debug\net6.0\StackExchange.Redis.dll
