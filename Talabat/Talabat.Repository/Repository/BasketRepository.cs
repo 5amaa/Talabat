@@ -40,5 +40,11 @@ namespace Talabat.Repository.Repository
            var createdOrUpdated = await _database.StringSetAsync(basket.Id, JsonSerializer.Serialize(basket), TimeSpan.FromDays(1));
             return createdOrUpdated? await GetBasketAsync(basket.Id): null;
         }
+
+        public async Task<bool> DeleteBasket(string basketId)
+        {
+            return await _database.KeyDeleteAsync(basketId);
+
+        }
     }
 }
