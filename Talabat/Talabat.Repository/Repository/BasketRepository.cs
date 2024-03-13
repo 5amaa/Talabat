@@ -41,10 +41,6 @@ namespace Talabat.Repository.Repository
             return createdOrUpdated? await GetBasketAsync(basket.Id): null;
         }
 
-        public async Task<bool> DeleteBasket(string basketId)
-        {
-            return await _database.KeyDeleteAsync(basketId);
-
-        }
+     
     }
 }

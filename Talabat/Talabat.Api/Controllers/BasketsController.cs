@@ -18,6 +18,7 @@ namespace Talabat.Api.Controllers
         public async Task<ActionResult<CustomerBasket>> GetCustomerBasket(string id)
         {
             CustomerBasket basket = await _basket.GetBasketAsync(id);
+            // lw be null a3mlo object gded mn el basketid bs el item hyb2ah fady
             return Ok(basket is null ? new CustomerBasket(id) : basket);
 
         }
